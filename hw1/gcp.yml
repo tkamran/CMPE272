@@ -1,0 +1,13 @@
+---
+plugin: gcp_compute
+projects:
+          - my-ansible@ambient-future-450201-d6.iam.gserviceaccount.com
+auth_kind: serviceaccount
+service_account_file: /home/tkamran/.ansible/quickstart/tfsvc.json
+keyed_groups:
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
+groups:
+  remote: "'citrix' in (labels|list)"
